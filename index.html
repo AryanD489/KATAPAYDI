@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancient vs Modern Cryptography</title>
+    <link rel="stylesheet" href="crypto.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Cabin:ital,wght@0,400..700;1,400..700&family=Cardo:ital,wght@0,400;0,700;1,400&family=Cedarville+Cursive&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Elsie+Swash+Caps:wght@400;900&family=IM+Fell+English:ital@0;1&family=Londrina+Solid:wght@100;300;400;900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ojuju:wght@200..800&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reenie+Beanie&family=Rubik+Dirt&family=Special+Elite&family=Staatliches&family=Syne:wght@400..800&family=Yatra+One&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔐 Ancient vs Modern Cryptography 🔒</h1>
+            <p>Exploring the evolution from Katapayadi system to modern encryption</p>
+        </div>
+
+        <div class="comparison-grid">
+            <!-- Ancient Cryptography Section -->
+            <div class="crypto-section">
+                <div class="section-title ancient-title">
+                    🏺 Ancient: Katapayadi System
+                </div>
+
+                <div class="info-box">
+                    <h3>What is Katapayadi?</h3>
+                    <p>An ancient Indian system that converts Sanskrit/Malayalam letters to numbers, used for encoding
+                        astronomical data, dates, and secret messages in verses and literature.</p>
+                </div>
+
+                <div class="katapayadi-table">
+                    <div class="katapayadi-cell">क ka = 1</div>
+                    <div class="katapayadi-cell">ख kha = 2</div>
+                    <div class="katapayadi-cell">ग ga = 3</div>
+                    <div class="katapayadi-cell">घ gha = 4</div>
+                    <div class="katapayadi-cell">ङ nga = 5</div>
+                    <div class="katapayadi-cell">च cha = 6</div>
+                    <div class="katapayadi-cell">छ chha = 7</div>
+                    <div class="katapayadi-cell">ज ja = 8</div>
+                    <div class="katapayadi-cell">झ jha = 9</div>
+                    <div class="katapayadi-cell">ञ nja = 0</div>
+                    <div class="katapayadi-cell">ट ta = 1</div>
+                    <div class="katapayadi-cell">ठ tha = 2</div>
+                    <div class="katapayadi-cell">ड da = 3</div>
+                    <div class="katapayadi-cell">ढ dha = 4</div>
+                    <div class="katapayadi-cell">ण na = 5</div>
+                    <div class="katapayadi-cell">त ta = 1</div>
+                    <div class="katapayadi-cell">थ tha = 2</div>
+                    <div class="katapayadi-cell">द da = 3</div>
+                    <div class="katapayadi-cell">ध dha = 4</div>
+                    <div class="katapayadi-cell">न na = 5</div>
+                </div>
+
+                <div class="demo-area">
+                    <h4>Try Katapayadi Encoding</h4>
+                    <div class="input-group">
+                        <label>Enter Sanskrit text (English transliteration):</label>
+                        <input type="text" id="ancientInput" placeholder="Example: kaliyuga" value="kaliyuga">
+                    </div>
+                    <button class="btn" onclick="encodeKatapayadi()">🔢 Encode to Numbers</button>
+                    <button class="btn" onclick="decodeKatapayadi()">📝 Decode from Numbers</button>
+                    <div class="result-area" id="ancientResult">Numbers will appear here...</div>
+                </div>
+            </div>
+
+            <!-- Modern Cryptography Section -->
+            <div class="crypto-section">
+                <div class="section-title modern-title">
+                    💻 Modern: AES Encryption
+                </div>
+
+                <div class="info-box">
+                    <h3>What is AES?</h3>
+                    <p>Advanced Encryption Standard - a symmetric encryption algorithm used worldwide for securing data.
+                        It uses complex mathematical operations and is virtually unbreakable with current technology.
+                    </p>
+                </div>
+
+                <div class="demo-area">
+                    <h4>Try Modern Encryption</h4>
+                    <div class="input-group">
+                        <label>Enter message to encrypt:</label>
+                        <textarea id="modernInput" placeholder="Enter your secret message here..."
+                            rows="3">Hello, this is a secret message!</textarea>
+                    </div>
+                    <div class="input-group">
+                        <label>Encryption Key:</label>
+                        <input type="text" id="encryptionKey" placeholder="Enter a secret key" value="mySecretKey123">
+                    </div>
+                    <button class="btn" onclick="encryptMessage()">🔒 Encrypt Message</button>
+                    <button class="btn" onclick="decryptMessage()">🔓 Decrypt Message</button>
+                    <div class="result-area" id="modernResult">Encrypted text will appear here...</div>
+                </div>
+
+                <div class="info-box">
+                    <h3>Security Features</h3>
+                    <p>• 128/192/256-bit keys<br>• Billions of years to crack<br>• Used by governments & banks<br>•
+                        Quantum-resistant variants being developed</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <h2>🎭 Steganography & Secret Messaging</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: #666; font-size: 1.1rem;">
+                The art of hiding messages in plain sight - where the existence of the message itself is concealed
+            </p>
+
+            <div class="stego-grid"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                <div class="stego-demo">
+                    <h3 style="color: #1a237e; margin-bottom: 15px;">🖼️ Image Steganography Demo</h3>
+                    <div class="demo-area">
+                        <div class="input-group">
+                            <label>Secret Message to Hide:</label>
+                            <input type="text" id="stegoMessage" placeholder="Enter secret message"
+                                value="Secret plans at midnight">
+                        </div>
+                        <button class="btn" onclick="hideInImage()">🎨 Hide in Image Data</button>
+                        <button class="btn" onclick="revealFromImage()">🔍 Reveal Hidden Message</button>
+                        <div class="result-area" id="stegoResult">Hidden message simulation will appear here...</div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #666;">
+                            💡 Real steganography modifies pixel values imperceptibly to human eyes
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stego-demo">
+                    <h3 style="color: #1a237e; margin-bottom: 15px;">📝 Text Steganography Demo</h3>
+                    <div class="demo-area">
+                        <div class="input-group">
+                            <label>Cover Text:</label>
+                            <textarea id="coverText" rows="3"
+                                placeholder="Innocent looking text">The weather is really nice today. Everyone should go outside and enjoy the sunshine.</textarea>
+                        </div>
+                        <div class="input-group">
+                            <label>Secret Message:</label>
+                            <input type="text" id="secretMsg" placeholder="Message to hide" value="HELP">
+                        </div>
+                        <button class="btn" onclick="hideInText()">📄 Hide in Text</button>
+                        <button class="btn" onclick="revealFromText()">🔍 Extract Secret</button>
+                        <div class="result-area" id="textStegoResult">Modified text will appear here...</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="technique-cards"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="technique-card" style="background: #fff3cd; padding: 20px; border-radius: 15px;">
+                    <h4 style="color: #856404; margin-bottom: 10px;">🏛️ Historical Techniques</h4>
+                    <ul style="color: #856404; line-height: 1.6;padding: 16px;">
+                        <li><strong>Invisible Ink:</strong> Lemon juice, heat-revealed messages</li>
+                        <li><strong>Microdots:</strong> Photographs reduced to period-size</li>
+                        <li><strong>Null Ciphers:</strong> Hidden in innocent-looking letters</li>
+                        <li><strong>Katapayadi Poetry:</strong> Numbers disguised as verses</li>
+                    </ul>
+                </div>
+
+                <div class="technique-card" style="background: #d1ecf1; padding: 20px; border-radius: 15px;">
+                    <h4 style="color: #0c5460; margin-bottom: 10px;">💻 Digital Methods</h4>
+                    <ul style="color: #0c5460; line-height: 1.6;padding: 16px;">
+                        <li><strong>LSB Substitution:</strong> Modify least significant bits in images</li>
+                        <li><strong>Audio Steganography:</strong> Hide data in sound frequencies</li>
+                        <li><strong>Network Steganography:</strong> Covert channels in protocols</li>
+                        <li><strong>Blockchain Steganography:</strong> Hidden messages in transactions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🕵️</div>
+                <h3>Covert Communication</h3>
+                <p>From ancient times to today, humans have found ingenious ways to hide messages within
+                    innocent-looking content</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎭</div>
+                <h3>Hidden in Plain Sight</h3>
+                <p>Steganography's power lies in concealing not just the message content, but the very existence of
+                    communication</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Double Protection</h3>
+                <p>Combine cryptography + steganography: encrypt your message, then hide it - even if found, it remains
+                    unreadable</p>
+            </div>
+        </div> -->
+    </div>
+    <script src="crypto.js"></script>
+</body>
+
+</html>
